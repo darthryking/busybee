@@ -2,6 +2,20 @@
 
 a simple lil todo list app, meant for personal use.
 
+## Local Setup Instructions
+This only works with Python 3. If you try to use Python 2, you will be very sad.
+
+You should create a venv dedicated to this project. Then, activate the venv and run:
+
+```
+pip install -r requirements.txt
+```
+
+Then, run `python runserver.py`.
+
+Visit `http://127.0.0.1:8000/`.
+
+
 ## Models
 
 * Project

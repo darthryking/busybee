@@ -16,11 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from ui import views
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    
-    url(r'^api/', include('core.urls')),
-    url(r'^auth/', include('bb_auth.urls')),
-    
-    url(r'^', include('ui.urls')),
+    url(r'^$', views.IndexPage.as_view(), name='ui_index'),
 ]

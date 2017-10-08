@@ -11,9 +11,15 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import sys
 
+if sys.version_info.major != 3:
+    raise Exception("ERROR: This project must be run with Python 3!")
+    
+    
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(SETTINGS_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+    'bb_auth',
+    'ui',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +85,7 @@ WSGI_APPLICATION = 'busybee.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'busybee.db'),
     }
 }
 
@@ -117,4 +126,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATIC_URL = '/static/'
+
+
+# Other
+LOGIN_URL = '/auth/login/'
+

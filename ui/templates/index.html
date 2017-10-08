@@ -5,6 +5,6 @@
 {% block body %}
     <div>
         <h1>This is a Heading</h1>
-        <p>Hello, world!</p>
+        <p>Hello, {% if user.is_authenticated %}{{ user.username }}{% else %}world{% endif %}!</p>
     </div>
 {% endblock %}

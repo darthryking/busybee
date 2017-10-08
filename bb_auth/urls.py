@@ -15,15 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.contrib.auth.views import login, logout_then_login
+from django.contrib.auth.views import LoginView, logout_then_login
 
 from bb_auth import views
 
 urlpatterns = [
     url(
         r'^login/$',
-        login,
-        {'template_name': 'auth/login.html'},
+        LoginView.as_view(template_name='auth/login.html'),
         name='auth_login'
     ),
     url(

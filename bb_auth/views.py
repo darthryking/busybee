@@ -1,3 +1,4 @@
+from django.db import transaction
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
@@ -6,6 +7,7 @@ from django.utils.decorators import method_decorator
 
 from django.contrib.auth.models import User
 
+from bb_auth.models import UserProfile
 from bb_auth.forms import RegisterForm
 
 
@@ -34,20 +36,27 @@ class RegisterPage(View):
         if form.is_valid():
             data = form.cleaned_data
             
-            user = User.objects.create_user(
-                username=data['username'],
-                email=data['email'],
-                password=data['password1'],
-            )
-            
-            login(
-                request,
-                authenticate(
-                    username=user.username,
+            with transaction.atomic():
+                user = User.objects.create_user(
+                    username=data['username'],
+                    email=data['email'],
                     password=data['password1'],
                 )
-            )
-            
+                
+                userProfile = UserProfile(
+                    user=user,
+                    timezone=data['timezone'],
+                )
+                userProfile.save()
+                
+                login(
+                    request,
+                    authenticate(
+                        username=user.username,
+                        password=data['password1'],
+                    )
+                )
+                
             return redirect('ui_index')
             
         else:

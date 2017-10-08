@@ -1,5 +1,8 @@
 from django import forms
+from django.conf import settings
 from django.contrib.auth.models import User
+
+import pytz
 
 
 def get_field(Model, fieldName):
@@ -38,6 +41,11 @@ class RegisterForm(forms.Form):
         widget=forms.PasswordInput(
             attrs={'placeholder' : "*******"},
         ),
+    )
+    
+    timezone = forms.ChoiceField(
+        choices=[(tz,) * 2 for tz in pytz.all_timezones],
+        initial=settings.TIME_ZONE,
     )
     
     def clean(self):

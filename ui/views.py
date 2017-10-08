@@ -1,15 +1,27 @@
+import logging
+
+from django.utils import timezone
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import View, TemplateView
 
 from bb_auth.views import AuthView
+
+LOGGER = logging.getLogger(__name__)
 
 
 class TemplateAuthView(AuthView, TemplateView):
     pass
     
     
-class IndexPage(TemplateView):
+class IndexPage(View):
     template_name = 'index.html'
+    
+    def get(self, request):
+        context = {
+            'time' : timezone.now(),
+        }
+        LOGGER.info("hi")
+        return render(request, self.template_name, context)
     
     
 class DashboardPage(TemplateAuthView):

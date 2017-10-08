@@ -20,4 +20,7 @@ from ui import views
 
 urlpatterns = [
     url(r'^$', views.IndexPage.as_view(), name='ui_index'),
+    url(r'^dashboard/$', views.DashboardPage.as_view(), name='ui_dashboard'),
+    url(r'^projects/$', views.ProjectPage.as_view(), name='ui_projects'),
+    url(r'^tags/$', views.TagsPage.as_view(), name='ui_tags'),
 ]

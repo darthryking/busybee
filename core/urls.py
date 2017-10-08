@@ -19,5 +19,9 @@ from django.contrib import admin
 from core import views
 
 urlpatterns = [
+    url(r'^projects/$', views.ProjectsView.as_view(), name='core_projects'),
+    url(r'^projects/(?P<id>\d+)/$', views.ProjectsView.as_view(), name='core_projects'),
     
+    url(r'^tasks/$', views.TasksView.as_view(), name='core_tasks'),
+    url(r'^tasks/(?P<id>\d+)/$', views.TasksView.as_view(), name='core_tasks'),
 ]

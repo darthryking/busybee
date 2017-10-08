@@ -1,12 +1,20 @@
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.views.generic import View
+from django.utils.decorators import method_decorator
 
 from django.contrib.auth.models import User
 
 from bb_auth.forms import RegisterForm
 
 
+class AuthView(View):
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+        
+        
 class RegisterPage(View):
     template_name = 'auth/register.html'
     

@@ -1,16 +1,11 @@
-{% extends 'base.html' %}
-
-{% block title %}Login Page{% endblock %}
-
-{% block body %}
     <div>
         <h2>Log In</h2>
-        <form action="#" method="POST">
+        <form action="#" method="POST" class="form">
             {% csrf_token %}
-            <table>
                 {{ form }}
-                <tr><td></td><td><input type="submit" /></td></tr>
-            </table>
+
+	    Login form goes here
+
+                <input type="submit" />
         </form>
     </div>
-{% endblock %}

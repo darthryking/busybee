@@ -4,20 +4,12 @@
 {% block title %}This is a title.{% endblock %}
 
 {% block body %}
-    <div>
-        <h1>This is a Heading</h1>
+    <div class="col-md-12">
+
+      <div class="bee-main-container p-3 m-3">
         <p>Hello, {% if user.is_authenticated %}{{ user.username }}{% else %}world{% endif %}!</p>
         <p>The time is {{ time }}</p>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Imperdiet proin fermentum leo vel orci porta. Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Ut diam quam nulla porttitor massa id. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet. Pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Nulla posuere sollicitudin aliquam ultrices sagittis orci a. Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget. Tincidunt augue interdum velit euismod in. Elementum eu facilisis sed odio morbi quis commodo.
-
-Ornare arcu dui vivamus arcu felis bibendum ut. Sed pulvinar proin gravida hendrerit lectus. Euismod lacinia at quis risus sed vulputate. Lacus sed turpis tincidunt id aliquet risus. Gravida arcu ac tortor dignissim convallis aenean et tortor at. Ipsum consequat nisl vel pretium lectus quam id leo in. Augue lacus viverra vitae congue eu consequat ac felis donec. Amet consectetur adipiscing elit ut aliquam purus sit. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Feugiat nibh sed pulvinar proin. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Vel risus commodo viverra maecenas accumsan lacus vel facilisis. Tincidunt id aliquet risus feugiat in ante metus.
-
-Fringilla ut morbi tincidunt augue. Et tortor at risus viverra adipiscing at in tellus. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Sapien pellentesque habitant morbi tristique senectus. Vitae nunc sed velit dignissim sodales ut eu sem. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Faucibus purus in massa tempor nec feugiat nisl. Sapien et ligula ullamcorper malesuada proin. Pharetra et ultrices neque ornare aenean euismod elementum nisi. Praesent semper feugiat nibh sed. Magnis dis parturient montes nascetur ridiculus.
-
-Magnis dis parturient montes nascetur ridiculus mus mauris. A lacus vestibulum sed arcu non odio euismod. Ultrices dui sapien eget mi proin. Duis convallis convallis tellus id interdum velit laoreet id. Iaculis at erat pellentesque adipiscing commodo elit at imperdiet. Lobortis elementum nibh tellus molestie nunc non blandit massa. Lacus suspendisse faucibus interdum posuere lorem ipsum. Mauris sit amet massa vitae tortor condimentum lacinia quis. Amet facilisis magna etiam tempor orci eu lobortis elementum. Porta non pulvinar neque laoreet suspendisse interdum consectetur. Etiam non quam lacus suspendisse faucibus interdum.
-
-Diam in arcu cursus euismod quis viverra nibh cras. At elementum eu facilisis sed odio morbi quis. Quam lacus suspendisse faucibus interdum posuere lorem ipsum. Placerat in egestas erat imperdiet sed euismod nisi porta lorem. Tellus molestie nunc non blandit massa enim nec dui nunc. Sed elementum tempus egestas sed sed. Ut porttitor leo a diam sollicitudin tempor id. Neque convallis a cras semper auctor. Consectetur a erat nam at lectus. Urna nec tincidunt praesent semper feugiat. Sit amet dictum sit amet justo donec enim diam vulputate.
+      </div>
 
     </div>
 {% endblock %}

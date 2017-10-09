@@ -24,4 +24,6 @@ urlpatterns = [
     
     url(r'^tasks/$', views.TasksView.as_view(), name='core_tasks'),
     url(r'^tasks/(?P<id>\d+)/$', views.TasksView.as_view(), name='core_tasks'),
+    
+    url(r'^tags/$', views.TagsView.as_view(), name='core_tags'),
 ]

@@ -67,8 +67,6 @@ class ProjectsView(AuthView):
         
         
 class TasksView(AuthView):
-    Model = Task
-    
     def get(self, request, id=None):
         if id is None:
             return self.get_constrained_tasks(request)
@@ -166,3 +164,10 @@ class TasksView(AuthView):
             raise
             
             
+class TagsView(AuthView):
+    def get(self, request):
+        tags = Tag.objects.filter(task__project__user=request.user).distinct()
+        tagsJson = json.dumps([tag.to_dict() for tag in tags])
+        return JsonResponse(tagsJson)
+        
+        

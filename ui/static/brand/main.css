@@ -1,0 +1,13 @@
+html,body{height: 100%;}
+.h-100 {height: 100%;}
+
+
+
+.bee-menu {
+    background-color: #ffdc89;
+}
+.bee-main {
+    overflow: auto;
+    background-color: #fff;
+
+}

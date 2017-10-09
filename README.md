@@ -76,26 +76,43 @@ These will all be called through Ajax only, and will return JSON results rather 
 * Create new Project
 * Create new Task
 * Edit Task:
-	- Name
-	- Description
-	- Due date
-	- Mark complete/incomplete
+    - Name
+    - Description
+    - Due date
+    - Mark complete/incomplete
 * Edit Project: 
-	- Name
-	- Description
-	- Mark active/inactive
+    - Name
+    - Description
+    - Mark active/inactive
 
 #### GET - for viewing data
 
+For all endpoints, only data that is associated in some way with the current user is displayed.
+
+* List Projects
+    * Endpoint: `/api/projects/`
 * View Project
+    * Endpoint: `/api/projects/<projectid>/`
 * View Task
+    * Endpoint: `/api/tasks/<taskid>/`
 * View all Tasks within specific constraints
-	* Constraint: can specify multiple tags
-	* Constraint: can specify a project, or "all projects"
-	* Constraint: can specify up to two dates: 
-		* "Before" date - view all projects due before this date
-		* "After" date - view all projects due after this date
-	* Constraint: Complete/incomplete/both
-	* Constraint: Option to show tasks in inactive projects; by default they are not shown
+    * Endpoint: `/api/tasks/`
+    * Parameters (all are optional):
+        * `?tags=1,2,3`
+            * Comma-separated list of Tag IDs to filter by.
+        * `?project=<projectid>`
+            * Project ID to filter by.
+        * `?before=YYYY-MM-DD`
+            * Filter by all tasks that are due before the given date.
+        * `?after=YYYY-MM-DD`
+            * Filter by all tasks that are due after the given date.
+        * `?complete=<bool>`
+            * Include completed tasks (default `true`)
+        * `?incomplete=<bool>`
+            * Include incomplete tasks (default `true`)
+        * `?inactive=<bool>` 
+            * Include tasks that are part of inactive projects (default `false`)
+* View Tags
+    * Endpoint: `/api/tags/`
 
 ## That's all for now

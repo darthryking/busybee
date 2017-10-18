@@ -8,9 +8,8 @@
         <h2>Log In</h2>
         <form action="#" method="POST" class="form">
             {% csrf_token %}
-            {% render_field form.username class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
-            {% render_field form.password class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
-            Login form goes here
+            {% render_field login_form.username class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
+            {% render_field login_form.password class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
             <input type="submit" />
         </form>
     </div>

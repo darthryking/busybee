@@ -2,6 +2,7 @@ import logging
 
 from django.utils import timezone
 from django.utils.deprecation import MiddlewareMixin
+from django.contrib.auth.forms import AuthenticationForm
 
 LOGGER = logging.getLogger(__name__)
 
@@ -22,3 +23,7 @@ class TimezoneMiddleware(MiddlewareMixin):
         return None
         
         
+def login_form(request):
+    return {'login_form': AuthenticationForm()}
+    
+    

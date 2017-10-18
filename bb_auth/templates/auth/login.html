@@ -6,13 +6,12 @@
 {% block body %}
     <div>
         <h2>Log In</h2>
-        <form action="#" method="POST">
+        <form action="#" method="POST" class="form">
             {% csrf_token %}
-            <table>
-                {% render_field form.username class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
-                {% render_field form.password class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
-                <tr><td></td><td><input type="submit" /></td></tr>
-            </table>
+            {% render_field form.username class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
+            {% render_field form.password class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
+            Login form goes here
+            <input type="submit" />
         </form>
     </div>
 {% endblock %}

@@ -1,0 +1,21 @@
+{% load widget_tweaks %}
+<div class="p-1 p-md-2">
+  <form action="{% url 'auth_login' %}" method="POST" class="form bee-login-form align-items-center">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6 mb-1">
+	<label for="username" class="sr-only">Username</label>
+	{% render_field login_form.username class+="form-control form-control-sm" id="username" placeholder="Username" %}
+      </div>
+      <div class="form-group col-md-6 mb-1">
+	<label for="password" class="sr-only">Password</label>
+	{% render_field login_form.password class+="form-control form-control-sm" id="password" placeholder="Password" %}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12 mb-1">
+	<button type="submit" class="form-control form-control-sm">Log In</button>
+      </div>
+    </div>
+  </form>
+</div>

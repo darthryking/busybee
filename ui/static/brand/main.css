@@ -2,7 +2,7 @@ html,body{height: 100%;}
 .h-100 {height: 100%;}
 
 .bee-brand {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #fdc53d;
     text-transform: lowercase; 
 
@@ -29,6 +29,12 @@ html,body{height: 100%;}
 }
 .bee-main-container {
     border: 2px solid #eee;
+}
+.bee-login-form button {
+    background-color: #fff1ce;
+}
+.bee-login-form button:hover {
+    cursor: pointer;
 }
 
 .task {

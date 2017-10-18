@@ -18,6 +18,7 @@ class Project(models.Model):
         
 class Tag(models.Model):
     name =  models.CharField(max_length=256)
+    color = models.CharField(max_length=6)
     
     def __str__(self):
         return "Tag '{}'".format(self.name)

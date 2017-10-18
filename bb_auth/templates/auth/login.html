@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 
 {% block title %}Login Page{% endblock %}
 
@@ -8,7 +9,8 @@
         <form action="#" method="POST">
             {% csrf_token %}
             <table>
-                {{ form }}
+                {% render_field form.username class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
+                {% render_field form.password class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
                 <tr><td></td><td><input type="submit" /></td></tr>
             </table>
         </form>

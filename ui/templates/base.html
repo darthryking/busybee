@@ -26,18 +26,22 @@
 	      <a href="#">Dashboard</a>
 	      <a href="#">Upcoming</a>
 	      <a href="#">Tasks</a>
-	      <a href="#">Projects</a>
+	      <a href="{% url 'ui_projects' %}">Projects</a>
 	      <a href="#">Search</a>
 	    </div>
 	    <div class="bee-menu-container p-1 mb-3">
-	      <a href="#">Log out</a>
+	      {% if user.is_authenticated %}
+	      <a href="{% url 'auth_logout' %}">Log out</a>
+	      {% else %}
+	      {% include "auth/login.html" %}
+	      {% endif %}
 	    </div>
 	  </div>
 
 	</div>
 
-	<div class="bee-main col-12 col-md-10">
-	  <div class="container">
+	<div class="bee-main col-sm-12 col-lg-10">
+	  <div class="row p-3 m-3">
 	    {% block body %}{% endblock %}
 	  </div>
 	</div>

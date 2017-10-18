@@ -6,10 +6,17 @@
 {% block body %}
     <div class="col-md-12">
 
-      <div class="bee-main-container p-3 m-3">
-        <p>Hello, {% if user.is_authenticated %}{{ user.username }}{% else %}world{% endif %}!</p>
-        <p>The time is {{ time }}</p>
+      {% if user.is_authenticated %}
+      <div class="bee-main-container">
+	dashboard page for {{ user.username }}
       </div>
+      {% else %}
+      <div class="bee-main-container">
+	main home page?
+      </div>
+      {% endif %}
+
+    </div>
 
     </div>
 {% endblock %}

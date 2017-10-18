@@ -4,12 +4,39 @@
 {% block title %}This is a title.{% endblock %}
 
 {% block body %}
-    <div>
-        <h1>This is a Heading</h1>
-        <p>Hello, {% if user.is_authenticated %}{{ user.username }}{% else %}world{% endif %}!</p>
+<div class="col-md-12">
+
+  <div id="tasks-accordion" data-children=".task">
+
+    <div class="task">
+      <div>
+	<span class="checkbox"></span>
+	<span class="task-title" data-toggle="collapse" data-parent="#tasks-accordion" href="#task-00" aria-expanded="false" aria=controls="task-00">Task title</span>
+      </div>
+      <div id="task-00" class="task-info collapse" role="tabpanel">
+	Information about this task!
+      </div>
     </div>
+
+    <div class="task">
+      <div class="task-title" data-toggle="collapse" data-parent="#tasks-accordion" href="#task-01" aria-expanded="false" aria=controls="task-01">Task title</div>
+      <div id="task-01" class="task-info collapse" role="tabpanel">
+	Information about this task!
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="task-title" data-toggle="collapse" data-parent="#tasks-accordion" href="#task-02" aria-expanded="false" aria=controls="task-02">Task title</div>
+      <div id="task-02" class="task-info collapse" role="tabpanel">
+	Information about this task!
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="{% static 'ui/stuff.js' %}"></script>
 {% endblock %}

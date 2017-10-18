@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block title %}This is a title.{% endblock %}
+{% block title %}Dashboard - Username{% endblock %}
 
 {% block body %}
-    <div>
-        <h1>This is a Heading</h1>
-        <p>Hello, {% if user.is_authenticated %}{{ user.username }}{% else %}world{% endif %}!</p>
-    </div>
+
+<div class="col-md-12">
+
+  <p>Hello, {% if user.is_authenticated %}{{ user.username }}{% else %}world{% endif %}!</p>
+</div>
+
 {% endblock %}
 
 {% block scripts %}

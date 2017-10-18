@@ -1,16 +1,16 @@
-{% extends 'base.html' %}
-{% load widget_tweaks %}
-
-{% block title %}Login Page{% endblock %}
-
-{% block body %}
-    <div>
-        <h2>Log In</h2>
-        <form action="#" method="POST" class="form">
-            {% csrf_token %}
-            {% render_field login_form.username class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
-            {% render_field login_form.password class+="class1 class2 class3" attribute="42" otherattribute="9001" %}
-            <input type="submit" />
-        </form>
+{% load widget_tweaks %
+<div>
+  <h2>Log In</h2>
+  <form action="{% url 'auth_login' %}" method="POST" class="form">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="username">Username</label>
+      {% render_field login_form.username class+="form-control" id="username" placeholder="Username" %}
     </div>
-{% endblock %}
+    <div class="form-group">
+      <label for="password">Password</label>
+      {% render_field login_form.password class+="form-control" id="password" placeholder="Password" %}
+    </div>
+    <button type="submit" class="btn btn-outline-success">Login</button>
+  </form>
+</div>
